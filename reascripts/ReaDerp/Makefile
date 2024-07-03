@@ -4,6 +4,12 @@ LUA54=lua5.4
 LUAC54=luac5.4
 LUACHECK=luacheck
 
+LIBS=Polo.lua
+VENDOR=json.lua url.lua
+
+source:=$(wildcard source/*.lua source/include/*.lua)
+libs:=$(foreach lib, $(LIBS), ../common/libs/$(lib))
+vendor:=$(foreach lib, $(VENDOR), ../common/vendor/$(lib))
 tests:=$(wildcard tests/Test*.lua)
 
 all: lint test
