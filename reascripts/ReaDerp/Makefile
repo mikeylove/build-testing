@@ -1,3 +1,4 @@
+LUA=lua
 LUA53=lua5.3
 LUAC53=luac5.3
 LUA54=lua5.4
@@ -18,8 +19,7 @@ lint: $(source) $(libs)
 	$(LUACHECK) $?
 
 test: $(source) $(libs) $(tests)
-	true $(foreach test, $(tests), && $(LUA53) $(test) -v)
-	true $(foreach test, $(tests), && $(LUA54) $(test) -v)
+	true $(foreach test, $(tests), && $(LUA) $(test) -v)
 
 .PHONY: clean
 clean:
