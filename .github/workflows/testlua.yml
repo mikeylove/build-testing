@@ -1,6 +1,12 @@
 name: Run LUA Tests
 
-on: []
+on:
+  push:
+    tags:        
+      - 'derp'
+    branches:
+      - derp
+
 jobs:
   test:
     strategy:
