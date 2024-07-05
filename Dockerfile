@@ -1,4 +1,4 @@
-FROM swaggerapi/swagger-ui:v4.18.2 AS swagger-ui
+FROM --platform=${TARGETPLATFORM} swaggerapi/swagger-ui:v4.18.2 AS swagger-ui
 FROM python:3.10-slim
 
 ARG SERVICE_USER=service
