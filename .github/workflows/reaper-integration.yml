@@ -9,7 +9,7 @@ jobs:
   test:
     strategy:
       fail-fast: false
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     defaults:
       run:
         working-directory: reascripts/ReaDerp
@@ -17,10 +17,16 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-    - name: setup
+    - name: gh client
       run: |
-        sudo apt-get install reaper
+        brew update
+        brew install gh
+
+    - name: install reaper
+      run: |
+        brew update
+        brew install reaper
 
     - name: test
       run: |
-        which reaper
+        /Applications/REAPER.app/Contents/MacOS/REAPER --run reascripts/ReaDerp/ReaDerp.lua
