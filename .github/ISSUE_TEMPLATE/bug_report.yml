@@ -60,7 +60,4 @@ body:
     id: steps_to_reproduce
     attributes:
       label: Steps to Reproduce
-      description: |
-        1. Open the program.
-        2. ...
-        3. No profit
+      description: No step is too small or too obvious - please be specific.
