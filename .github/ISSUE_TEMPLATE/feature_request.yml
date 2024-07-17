@@ -19,11 +19,6 @@ body:
       label: Use Case
       description: How would you use this feature? What problem does it solve?
   - type: textarea
-    id: feature_alternatives
-    attributes:
-      label: Alternatives
-      description: What other solutions have you considered? Why are they not sufficient?
-  - type: textarea
     id: feature_additional_context
     attributes:
       label: Additional Context
