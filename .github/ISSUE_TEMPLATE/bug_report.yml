@@ -23,6 +23,8 @@ body:
         - macOS
         - Linux
         - Other
+    validations:
+      required: true
   - type: input
     id: operating_system_other
     attributes:
@@ -35,6 +37,8 @@ body:
       options:
         - amd64
         - arm64
+    validations:
+      required: true
   - type: dropdown
     id: reaspeech_image
     attributes:
@@ -42,6 +46,8 @@ body:
       options:
         - reaspeech (CPU)
         - reaspeech-gpu (CUDA)
+    validations:
+      required: true
   - type: markdown
     attributes:
       value: |
@@ -51,13 +57,19 @@ body:
     attributes:
       label: What were you trying to do?
       description: The more detail you provide, the better.
+    validations:
+      required: true
   - type: textarea
     id: failed_expectations
     attributes:
       label: What actually happened?
       description: How did the program respond? Did it hang? Did it crash? Did it achieve sentience and refuse to comply?
+    validations:
+      required: true
   - type: textarea
     id: steps_to_reproduce
     attributes:
       label: Steps to Reproduce
       description: No step is too small or too obvious - please be specific.
+    validations:
+      required: true
