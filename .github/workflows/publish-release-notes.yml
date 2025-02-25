@@ -1,4 +1,4 @@
-	name: Publish GitHub Release Notes to WordPress
+name: Publish GitHub Release Notes to WordPress
 
 on:
   release:
