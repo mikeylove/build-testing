@@ -23,6 +23,6 @@ jobs:
             -u "$WP_USERNAME:$WP_APP_PASSWORD" \
             -d '{
                   "title": "'"${{ github.event.release.name }}"'",
-                  "content": "'"{{ github.event.release.body }}"'",
+                  "content": "'${{ github.event.release.body }}"'",
                   "status": "publish"
                 }'
