@@ -14,9 +14,9 @@ jobs:
 
       - name: Publish Release Notes to WordPress
         env:
-          WP_API_URL: ${{ secrets.WP_API_URL }}        # e.g., https://your-wordpress-site.com/wp-json/wp/v2/posts
-          WP_USERNAME: ${{ secrets.WP_USERNAME }}          # Your WordPress username
-          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}  # Your WordPress application password
+          WP_API_URL: ${{ secrets.WP_API_URL }}      
+          WP_USERNAME: ${{ secrets.WP_USERNAME }}          
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}  
           RELEASE_TITLE: ${{ github.event.release.name }}
           RELEASE_BODY: ${{ github.event.release.body }}
         run: |
