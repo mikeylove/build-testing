@@ -17,7 +17,6 @@ jobs:
           WP_API_URL: ${{ secrets.WP_API_URL }}      
           WP_USERNAME: ${{ secrets.WP_USERNAME }}          
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}  
-
         run: |
           echo $WP_API_URL
           echo $WP_USERNAME
