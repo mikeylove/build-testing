@@ -6,9 +6,4 @@ changelog:
         - wontfix
         - duplicate
   categories:
-    - name: "Feature"
-      description: "New features added"
-    - name: "Bug Fix"
-      description: "Bug fixes and improvements"
-    - name: "Documentation"
-      description: "Changes to documentation"
+    - "*" # Include all labels
