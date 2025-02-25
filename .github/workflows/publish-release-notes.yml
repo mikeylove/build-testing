@@ -18,13 +18,20 @@ jobs:
           WP_USERNAME: ${{ secrets.WP_USERNAME }}          
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}  
         run: |
+          TITLE=$(echo "${{ github.event.release.name }}" | jq -Rs .)
+          CONTENT=$(echo "${{ github.event.release.body }}" | jq -Rs .)
+
+          echo "Title: $TITLE"
+          echo "Content: $CONTENT"
+
           curl -X POST "$WP_API_URL" \
             -H "Content-Type: application/json" \
             -u "$WP_USERNAME:$WP_APP_PASSWORD" \
-            --data-binary @- << EOF
-                {
-                  "title": "'"${{ github.event.release.name }}"'",
-                  "content": "'"${{ github.event.release.body }}"'",
-                  "status": "publish"
-                }
-            EOF
+            --data-binary @- <<EOF
+          {
+            "title": $TITLE,
+            "content": $CONTENT,
+            "status": "publish"
+          }
+          EOF
+       
