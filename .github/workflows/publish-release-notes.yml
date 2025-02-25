@@ -20,14 +20,12 @@ jobs:
           RELEASE_TITLE: ${{ github.event.release.name }}
           RELEASE_BODY: ${{ github.event.release.body }}
         run: |
-          echo $RELEASE_TITLE
-          echo $RELEASE_BODY
           curl -X POST "$WP_API_URL" \
             -H "Content-Type: application/json" \
             -u "$WP_USERNAME:$WP_APP_PASSWORD" \
             -d '{
-                  "title": "Test Title",
-                  "content": "Entering the next stage of testing....",
+                  "title": $RELEASE_TITLE,
+                  "content": $RELEASE_BODY,
                   "status": "publish"
                 }'
        
