@@ -17,9 +17,11 @@ jobs:
           WP_API_URL: ${{ secrets.WP_API_URL }}      
           WP_USERNAME: ${{ secrets.WP_USERNAME }}          
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}  
-          RELEASE_TITLE: ${{ github.event.release.name }}
-          RELEASE_BODY: ${{ github.event.release.body }}
+
         run: |
+          echo $WP_API_URL
+          echo $WP_USERNAME
+          echo $WP_APP_PASSWORD
           curl -X POST "$WP_API_URL" \
             -H "Content-Type: application/json" \
             -u "$WP_USERNAME:$WP_APP_PASSWORD" \
