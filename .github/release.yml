@@ -1,0 +1,9 @@
+# .github/release.yml
+
+changelog:
+  exclude:
+      labels:
+        - wontfix
+        - duplicate
+  categories: 
+    - "*"
