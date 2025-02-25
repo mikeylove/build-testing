@@ -21,8 +21,10 @@ jobs:
           curl -X POST "$WP_API_URL" \
             -H "Content-Type: application/json" \
             -u "$WP_USERNAME:$WP_APP_PASSWORD" \
-            -d '{
+            --data-binary @- << EOF
+                {
                   "title": "'"${{ github.event.release.name }}"'",
-                  "content": "'${{ github.event.release.body }}"'",
+                  "content": "'"${{ github.event.release.body }}"'",
                   "status": "publish"
-                }'
+                }
+            EOF
