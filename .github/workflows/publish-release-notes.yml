@@ -24,8 +24,8 @@ jobs:
             -H "Content-Type: application/json" \
             -u "$WP_USERNAME:$WP_APP_PASSWORD" \
             -d '{
-                  "title": $RELEASE_TITLE,
-                  "content": $RELEASE_BODY,
+                  "title": "'"$RELEASE_TITLE"'",
+                  "content": "'"$RELEASE_BODY"'",
                   "status": "publish"
                 }'
        
