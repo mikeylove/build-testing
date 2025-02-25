@@ -25,11 +25,9 @@ jobs:
           curl -X POST "$WP_API_URL" \
             -H "Content-Type: application/json" \
             -u "$WP_USERNAME:$WP_APP_PASSWORD" \
-            -data-binary @- << EOF
-                {
+            -d '{
                   "title": "Test Title",
                   "content": "Test Body",
                   "status": "publish"
-                }
-            EOF
+                }'
        
