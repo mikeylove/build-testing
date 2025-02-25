@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@master
+        uses: actions/checkout@v4
 
       - name: Publish Release Notes to WordPress
         env:
@@ -23,8 +23,11 @@ jobs:
           curl -X POST "$WP_API_URL" \
             -H "Content-Type: application/json" \
             -u "$WP_USERNAME:$WP_APP_PASSWORD" \
-            -d '{
-              "title": "'"$RELEASE_TITLE"'",
-              "content": "'"$RELEASE_BODY"'",
-              "status": "publish"
-            }'
+            -data-binary @- << EOF
+                {
+                  "title": "'"$RELEASE_TITLE"'",
+                  "content": "'"$RELEASE_BODY"'",
+                  "status": "publish"
+                }
+            EOF
+       
