@@ -2,7 +2,7 @@ name: Branched Deployment
 on:
   push:
     branches:
-      - prod
+      - main
       - "staging-**"
 
 jobs:
