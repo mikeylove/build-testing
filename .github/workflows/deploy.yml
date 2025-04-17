@@ -1,0 +1,19 @@
+name: Branched Deployment
+on:
+  push:
+    branches:
+      - prod
+      - "staging-**"
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ github.ref_name == 'refs/heads/main' && vars.ENVIRONMENT_PRODUCTION || vars.ENVIRONMENT_STAGING}}
+
+    steps:
+      - name: Print env stuff
+        env:
+          TEST_ENV_VAR: ${{ vars.TEST_ENV_VAR}}
+        run: |
+          echo "TEST_ENV_VAR: $TEST_ENV_VAR"
+          echo "GCP_SA_KEY: $GCP_SA_KEY"
