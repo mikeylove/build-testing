@@ -8,7 +8,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment: ${{ github.ref_name == 'refs/heads/main' && vars.ENVIRONMENT_PRODUCTION || vars.ENVIRONMENT_STAGING}}
+    environment: ${{ github.ref == 'refs/heads/main' && vars.ENVIRONMENT_PRODUCTION || vars.ENVIRONMENT_STAGING}}
 
     steps:
       - name: Print env stuff
